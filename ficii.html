@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Place For Us 💗</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",Arial,sans-serif;
+    background:linear-gradient(180deg,#ffd6e7,#fff0f6,#ffddea);
+    color:#6b3650;
+    overflow-x:hidden;
+}
+
+/* ================= PASSWORD ================= */
+
+#login{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffb6d5,#ffddec);
+    padding:20px;
+}
+
+.login-box{
+    width:100%;
+    max-width:380px;
+    background:rgba(255,255,255,.9);
+    padding:35px 25px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(180,70,120,.2);
+    animation:pop .8s ease;
+}
+
+.login-box .bear{
+    font-size:65px;
+    animation:bounce 2s infinite;
+}
+
+.login-box h1{
+    color:#e75491;
+    margin:10px 0;
+}
+
+.login-box p{
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.login-box input{
+    width:100%;
+    padding:14px;
+    border:2px solid #ffc1da;
+    border-radius:20px;
+    outline:none;
+    text-align:center;
+    font-size:15px;
+}
+
+.login-box button{
+    margin-top:15px;
+    border:none;
+    padding:13px 28px;
+    border-radius:25px;
+    background:#f47aaa;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-box button:hover{
+    transform:scale(1.05);
+    background:#e85f97;
+}
+
+#error{
+    color:#e85f97;
+    font-size:13px;
+    margin-top:10px;
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    min-height:100vh;
+    padding:80px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+}
+
+h1{
+    font-size:clamp(35px,8vw,65px);
+    color:#e75491;
+}
+
+h2{
+    font-size:clamp(28px,6vw,45px);
+    color:#df5b92;
+    margin-bottom:20px;
+}
+
+h3{
+    color:#df5b92;
+}
+
+p{
+    line-height:1.8;
+}
+
+/* ================= FLOATING HEART ================= */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:20px;
+    animation:floatUp linear forwards;
+    pointer-events:none;
+    z-index:1;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0) rotate(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:
+    radial-gradient(circle at 20% 20%,#fff 0 4%,transparent 5%),
+    linear-gradient(135deg,#ffc4dc,#ffeaf3);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.subtitle{
+    margin:15px auto 25px;
+    max-width:600px;
+}
+
+.cute-characters{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin:25px 0;
+}
+
+.character{
+    font-size:55px;
+    animation:bounce 2s infinite;
+}
+
+.character:nth-child(2){
+    animation-delay:.3s;
+}
+
+.character:nth-child(3){
+    animation-delay:.6s;
+}
+
+.character:nth-child(4){
+    animation-delay:.9s;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.start-btn{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    background:#f47aaa;
+    padding:14px 28px;
+    border-radius:30px;
+    box-shadow:0 8px 20px rgba(230,80,140,.25);
+    transition:.3s;
+}
+
+.start-btn:hover{
+    transform:scale(1.05);
+}
+
+/* ================= STORY ================= */
+
+.story-box{
+    background:rgba(255,255,255,.75);
+    border-radius:30px;
+    padding:30px;
+    max-width:750px;
+    box-shadow:0 10px 30px rgba(190,80,130,.12);
+}
+
+.story-box p{
+    margin-bottom:15px;
+}
+
+/* ================= LITTLE THINGS ================= */
+
+.little-grid{
+    width:100%;
+    max-width:900px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.little-card{
+    background:rgba(255,255,255,.85);
+    padding:25px 15px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(190,80,130,.12);
+    transition:.3s;
+}
+
+.little-card:hover{
+    transform:translateY(-8px) rotate(1deg);
+}
+
+.little-card .emoji{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.little-card h3{
+    margin-bottom:8px;
+}
+
+/* ================= VIDEO ================= */
+
+.video-grid{
+    width:100%;
+    max-width:950px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.video-card{
+    background:white;
+    padding:12px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(180,70,120,.15);
+}
+
+.video-card video{
+    width:100%;
+    border-radius:18px;
+    display:block;
+}
+
+.video-card h3{
+    padding:12px 5px 5px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    width:100%;
+    max-width:950px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:22px;
+    box-shadow:0 8px 20px rgba(180,70,120,.15);
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03) rotate(1deg);
+}
+
+/* ================= LETTER ================= */
+
+.letter{
+    max-width:750px;
+    background:#fff;
+    padding:35px;
+    border-radius:30px;
+    box-shadow:0 15px 35px rgba(180,70,120,.15);
+    text-align:left;
+    position:relative;
+}
+
+.letter:before{
+    content:"💗";
+    position:absolute;
+    top:-22px;
+    right:25px;
+    font-size:45px;
+}
+
+.letter p{
+    margin-bottom:15px;
+}
+
+/* ================= ENDING ================= */
+
+.ending{
+    background:linear-gradient(135deg,#ffd1e3,#fff0f7);
+}
+
+.big-heart{
+    font-size:90px;
+    animation:heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+/* ================= FINAL PAGE ================= */
+
+#finalPage{
+    background:
+    radial-gradient(circle at 10% 20%,rgba(255,255,255,.8) 0 5px,transparent 6px),
+    radial-gradient(circle at 90% 30%,rgba(255,255,255,.8) 0 5px,transparent 6px),
+    linear-gradient(135deg,#ffb7d5,#ffe9f2);
+    overflow:hidden;
+}
+
+.final-title{
+    margin-bottom:10px;
+}
+
+.final-subtitle{
+    margin-bottom:25px;
+}
+
+.nickname-box{
+    width:100%;
+    max-width:700px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin:20px 0;
+}
+
+.nickname-card{
+    background:rgba(255,255,255,.9);
+    border-radius:30px;
+    padding:30px 20px;
+    box-shadow:0 12px 30px rgba(180,70,120,.18);
+    transition:.3s;
+}
+
+.nickname-card:hover{
+    transform:translateY(-8px) rotate(-1deg);
+}
+
+.nickname-icon{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.nickname-card h3{
+    font-size:30px;
+    margin:10px 0;
+}
+
+.nickname-card p{
+    font-size:14px;
+}
+
+.nickname-quote{
+    background:rgba(255,255,255,.7);
+    max-width:650px;
+    padding:20px 25px;
+    border-radius:25px;
+    margin:15px 0 25px;
+}
+
+.celebrate-btn{
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    background:#ed6e9f;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(220,80,140,.25);
+    transition:.3s;
+}
+
+.celebrate-btn:hover{
+    transform:scale(1.08);
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti-heart{
+    position:fixed;
+    top:-50px;
+    pointer-events:none;
+    z-index:10000;
+    animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+    0%{
+        transform:translateY(-50px) rotate(0deg) scale(1);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(720deg) scale(.7);
+        opacity:0;
+    }
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:25px;
+    background:#f47aaa;
+    color:white;
+    text-align:center;
+    font-size:13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:750px){
+
+    .little-grid,
+    .video-grid{
+        grid-template-columns:1fr;
+        max-width:500px;
+    }
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery img{
+        height:190px;
+    }
+
+    .nickname-box{
+        grid-template-columns:1fr;
+        max-width:400px;
+    }
+
+    section{
+        padding:70px 18px;
+    }
+
+    .letter{
+        padding:25px 20px;
+    }
+}
+
+@media(max-width:400px){
+
+    .gallery img{
+        height:160px;
+    }
+
+    .character{
+        font-size:45px;
+    }
+
+    .cute-characters{
+        gap:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= PASSWORD ================= -->
+
+<div id="login">
+
+    <div class="login-box">
+
+        <div class="bear">🧸💗</div>
+
+        <h1>Private Space</h1>
+
+        <p>
+            Tempat kecil yang cuma boleh dibuka<br>
+            oleh orang spesial 💕
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Masukkan password..."
+        >
+
+        <button onclick="checkPassword()">
+            Buka 💗
+        </button>
+
+        <div id="error"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="cute-characters">
+            <div class="character">🧸</div>
+            <div class="character">🐰</div>
+            <div class="character">🐱</div>
+            <div class="character">🐣</div>
+        </div>
+
+        <h1>A Little Place For Us 💗</h1>
+
+        <p class="subtitle">
+            Sebuah tempat kecil untuk menyimpan cerita,
+            foto, video, dan hal-hal sederhana yang
+            bikin kita tersenyum. 🌷
+        </p>
+
+        <a href="#story" class="start-btn">
+            Mulai Cerita Kita 💕
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STORY ================= -->
+
+<section id="story">
+
+    <div class="container">
+
+        <h2>Our Little Story 📖</h2>
+
+        <div class="story-box">
+
+            <p>
+                Semua berawal dari dua orang yang mungkin
+                awalnya tidak menyangka akan menjadi sedekat ini.
+            </p>
+
+            <p>
+                Sampai akhirnya kita memutuskan untuk
+                menjalani semuanya bersama. 💗
+            </p>
+
+            <p>
+                Mungkin hubungan kita tidak selalu sempurna,
+                tapi setiap momen kecil yang kita lewati
+                tetap punya cerita tersendiri.
+            </p>
+
+            <p>
+                Dan website kecil ini dibuat untuk menyimpan
+                sebagian kecil dari cerita itu. 🌷
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LITTLE THINGS ================= -->
+
+<section>
+
+    <div class="container">
+
+        <h2>Little Things About Us 🥰</h2>
+
+        <div class="little-grid">
+
+            <div class="little-card">
+
+                <div class="emoji">💬</div>
+
+                <h3>Our Chats</h3>
+
+                <p>
+                    Percakapan sederhana yang kadang
+                    tidak terasa bisa bikin senyum sendiri.
+                </p>
+
+            </div>
+
+
+            <div class="little-card">
+
+                <div class="emoji">😂</div>
+
+                <h3>Our Jokes</h3>
+
+                <p>
+                    Candaan receh yang mungkin cuma
+                    kita berdua yang mengerti.
+                </p>
+
+            </div>
+
+
+            <div class="little-card">
+
+                <div class="emoji">💗</div>
+
+                <h3>Our Moments</h3>
+
+                <p>
+                    Momen kecil yang mungkin sederhana,
+                    tapi tetap berharga.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= VIDEOS ================= -->
+
+<section>
+
+    <div class="container">
+
+        <h2>Our Little Videos 🎬</h2>
+
+        <p style="margin-bottom:25px;">
+            Beberapa potongan kecil yang ingin disimpan. 💕
+        </p>
+
+        <div class="video-grid">
+
+            <div class="video-card">
+
+                <video
+                    controls
+                    poster="cover-video1.jpg"
+                >
+                    <source
+                        src="video1.mp4"
+                        type="video/mp4"
+                    >
+
+                    Browser kamu tidak mendukung video.
+                </video>
+
+                <h3>Our Moment 💗</h3>
+
+            </div>
+
+
+            <div class="video-card">
+
+                <video
+                    controls
+                    poster="cover-video2.jpg"
+                >
+                    <source
+                        src="video2.mp4"
+                        type="video/mp4"
+                    >
+
+                    Browser kamu tidak mendukung video.
+                </video>
+
+                <h3>Sweet Memory 🥰</h3>
+
+            </div>
+
+
+            <div class="video-card">
+
+                <video
+                    controls
+                    poster="cover-video3.jpg"
+                >
+                    <source
+                        src="video3.mp4"
+                        type="video/mp4"
+                    >
+
+                    Browser kamu tidak mendukung video.
+                </video>
+
+                <h3>Just Us 💕</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section>
+
+    <div class="container">
+
+        <h2>Our Memories 📸</h2>
+
+        <p style="margin-bottom:25px;">
+            Foto-foto kecil yang punya cerita besar. 💗
+        </p>
+
+        <div class="gallery">
+
+            <img src="foto1.jpg" alt="Memory 1">
+
+            <img src="foto2.jpg" alt="Memory 2">
+
+            <img src="foto3.jpg" alt="Memory 3">
+
+            <img src="foto4.jpg" alt="Memory 4">
+
+            <img src="foto5.jpg" alt="Memory 5">
+
+            <img src="foto6.jpg" alt="Memory 6">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LETTER ================= -->
+
+<section>
+
+    <div class="container">
+
+        <h2>A Little Letter 💌</h2>
+
+        <div class="letter">
+
+            <p>
+                Haii kamu 💗
+            </p>
+
+            <p>
+                Terima kasih sudah menjadi bagian dari
+                cerita yang sekarang sedang kita jalani.
+            </p>
+
+            <p>
+                Aku mungkin tidak selalu bisa mengatakan
+                semuanya dengan sempurna, tapi aku ingin
+                kamu tahu kalau setiap momen yang kita
+                lewati tetap berarti.
+            </p>
+
+            <p>
+                Semoga kita bisa terus membuat banyak
+                cerita kecil lainnya, tertawa bersama,
+                saling mendukung, dan tetap menjadi tempat
+                nyaman satu sama lain. 🥰
+            </p>
+
+            <p>
+                Terima kasih sudah hadir. 💗
+            </p>
+
+            <p style="text-align:right;">
+                — from someone who cares about you 🌷
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ENDING ================= -->
+
+<section class="ending">
+
+    <div class="container">
+
+        <div class="big-heart">
+            💗
+        </div>
+
+        <h2>
+            This Is Just The Beginning
+        </h2>
+
+        <p style="max-width:650px;">
+            Masih banyak cerita yang belum kita tulis,
+            masih banyak tempat yang belum kita datangi,
+            dan masih banyak momen kecil yang bisa kita simpan.
+        </p>
+
+        <div class="cute-characters">
+
+            <div class="character">🧸💗</div>
+
+            <div class="character">🐰💕</div>
+
+            <div class="character">🐱💖</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL PAGE ================= -->
+
+<section id="finalPage">
+
+    <div class="container">
+
+        <div class="cute-characters">
+
+            <div class="character">🧸💗</div>
+
+            <div class="character">🐰🎀</div>
+
+            <div class="character">🐱💕</div>
+
+            <div class="character">🐣🌸</div>
+
+        </div>
+
+
+        <h2 class="final-title">
+            Our Little Nicknames 💕
+        </h2>
+
+        <p class="final-subtitle">
+            Nama kecil yang cuma terasa spesial
+            kalau dipanggil oleh orang tertentu. 🥰
+        </p>
+
+
+        <div class="nickname-box">
+
+            <!-- GANTI NAMA DI SINI -->
+
+            <div class="nickname-card">
+
+                <div class="nickname-icon">
+                    🧸
+                </div>
+
+                <h3>Bubu</h3>
+
+                <p>
+                    Si paling disayang 💗
+                </p>
+
+            </div>
+
+
+            <div class="nickname-card">
+
+                <div class="nickname-icon">
+                    🐰
+                </div>
+
+                <h3>Bub</h3>
+
+                <p>
+                    Si paling cute 🎀
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="nickname-quote">
+
+            <p>
+                “Kadang sebuah panggilan sederhana
+                bisa menjadi salah satu hal paling
+                manis dari sebuah hubungan.” 💗
+            </p>
+
+        </div>
+
+
+        <button
+            class="celebrate-btn"
+            onclick="loveConfetti()"
+        >
+            Celebrate Us 🎉💗
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    Made with 💗 and a little bit of magic ✨
+
+</footer>
+
+
+<script>
+
+/* ================= PASSWORD ================= */
+
+function checkPassword(){
+
+    const password =
+        document.getElementById("password").value;
+
+    const correctPassword = "loveyou";
+
+    const error =
+        document.getElementById("error");
+
+    if(password === correctPassword){
+
+        document.getElementById("login").style.display =
+            "none";
+
+        document.body.style.overflowX =
+            "hidden";
+
+        loveConfetti();
+
+    }else{
+
+        error.innerHTML =
+            "Password salah 🥺💗";
+
+    }
+
+}
+
+
+/* ================= ENTER PASSWORD ================= */
+
+document
+.getElementById("password")
+.addEventListener("keydown",function(event){
+
+    if(event.key === "Enter"){
+
+        checkPassword();
+
+    }
+
+});
+
+
+/* ================= FLOATING HEART ================= */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = [
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "💝",
+        "💞"
+    ];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left =
+        Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random()*20) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random()*5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+
+        heart.remove();
+
+    },10000);
+
+}
+
+setInterval(createHeart,700);
+
+
+/* ================= CLICK HEART ================= */
+
+document.addEventListener("click",function(e){
+
+    if(
+        e.target.tagName === "BUTTON" ||
+        e.target.tagName === "INPUT"
+    ){
+
+        return;
+
+    }
+
+    const heart =
+        document.createElement("div");
+
+    heart.innerHTML = "💗";
+
+    heart.style.position = "fixed";
+
+    heart.style.left =
+        e.clientX + "px";
+
+    heart.style.top =
+        e.clientY + "px";
+
+    heart.style.fontSize = "25px";
+
+    heart.style.pointerEvents = "none";
+
+    heart.style.zIndex = "9999";
+
+    heart.style.transition =
+        "1s ease";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+
+        heart.style.transform =
+            "translateY(-80px) scale(1.5)";
+
+        heart.style.opacity = "0";
+
+    },50);
+
+    setTimeout(function(){
+
+        heart.remove();
+
+    },1000);
+
+});
+
+
+/* ================= HEART CONFETTI ================= */
+
+function loveConfetti(){
+
+    const emojis = [
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "💝",
+        "💞",
+        "♡",
+        "🎀",
+        "🌸",
+        "✨"
+    ];
+
+    for(let i = 0; i < 70; i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className =
+            "confetti-heart";
+
+        piece.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random()*emojis.length
+                )
+            ];
+
+        piece.style.left =
+            Math.random()*100 + "vw";
+
+        piece.style.fontSize =
+            (15 + Math.random()*25) + "px";
+
+        piece.style.animationDuration =
+            (3 + Math.random()*4) + "s";
+
+        piece.style.animationDelay =
+            Math.random()*1.5 + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        },8000);
+
+    }
+
+}
+
+
+/* ================= AUTO CONFETTI ================= */
+
+const finalPage =
+    document.getElementById("finalPage");
+
+const observer =
+    new IntersectionObserver(
+
+        function(entries){
+
+            entries.forEach(function(entry){
+
+                if(entry.isIntersecting){
+
+                    loveConfetti();
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:0.5
+        }
+
+    );
+
+observer.observe(finalPage);
+
+</script>
+
+</body>
+</html>
